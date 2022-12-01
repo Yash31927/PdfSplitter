@@ -8,8 +8,6 @@ import org.apache.pdfbox.multipdf.Splitter;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
-import junit.framework.Assert;
-
 public class PdfSplitter {
 
 	/**
