@@ -12,25 +12,30 @@ import junit.framework.Assert;
 
 public class PdfSplitter {
 
+	/**
+	 * @author-Yash Dixit
+	 * @author-Email-yashdixit927@gmail.com
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
-		
-//		 to extract the file from source location
+
+		//to extract the file from source location
 		File file = new File("C:\\Users\\Yash\\Downloads\\P_I_7_I_IP11_Hollander.pdf"); 
 		
-//		to convert into pdf file
+		//to convert into pdf file
 		PDDocument pdfDocument = Loader.loadPDF(file); 
 
-//		to create a new file 
+		//to create a new file
 		File newFile = new File("C:\\Users\\Yash\\Downloads\\split.pdf\\split"); 
 		
-//		to get total no. of pages
-//		System.out.println(pdfDocument.getPages().getCount());
+		//to get total no. of pages
 
-//		to split the pdf 
+		//to split the pdf
 		Splitter splitter = new Splitter(); 
 		List<PDDocument> splitPages = splitter.split(pdfDocument);
 		
-//		to create a new pdf
+		//to create a new pdf
 		PDDocument newDoc = new PDDocument();
 		int count = 1;
 		boolean firstPage = false;
@@ -48,25 +53,25 @@ public class PdfSplitter {
 				}
 
 			}
-//			keep adding pages until endPage is found out
+			//keep adding pages until endPage is found out
 			if (firstPage && !lastPage) {
 				newDoc.addPage(mydoc.getPage(0)); 
 			}
 			
-//			if we get both startPage and endPage of single worker
+			//if we get both startPage and endPage of single worker
 			if (firstPage && lastPage) {
 				newDoc.save(newFile + "" + count + ".pdf"); // save file to directory
 				count++;
 				
-//				Create new document 
+				//Create new document
 				newDoc = new PDDocument(); 
 				
-//				Add first page of new pdf
+				//Add first page of new pdf
 				newDoc.addPage(mydoc.getPage(0)); 
 				lastPage = false;
 			}
 		}
-//		to save the last page
+		//to save the last page
 		newDoc.save(newFile + "" + count + ".pdf");
 		System.out.println("The given file has been split into 2");
 	}
