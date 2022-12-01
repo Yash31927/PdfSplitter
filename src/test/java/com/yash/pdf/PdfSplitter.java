@@ -2,6 +2,7 @@ package com.yash.pdf;
 
 import java.io.File;
 import java.util.List;
+import java.util.Scanner;
 
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.multipdf.Splitter;
@@ -18,16 +19,18 @@ public class PdfSplitter {
 	 */
 	public static void main(String[] args) throws Exception {
 
+		Scanner s=new Scanner(System.in);
 		//to extract the file from source location
-		File file = new File("C:\\Users\\Yash\\Downloads\\P_I_7_I_IP11_Hollander.pdf"); 
-		
+		System.out.println("Enter file path");
+		File file = new File(s.next());
+
+
 		//to convert into pdf file
 		PDDocument pdfDocument = Loader.loadPDF(file); 
 
 		//to create a new file
-		File newFile = new File("C:\\Users\\Yash\\Downloads\\split.pdf\\split"); 
-		
-		//to get total no. of pages
+		System.out.println("Enter the path where you want to save the file");
+		File newFile = new File(s.next());
 
 		//to split the pdf
 		Splitter splitter = new Splitter(); 
