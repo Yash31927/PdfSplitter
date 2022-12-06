@@ -40,7 +40,7 @@ public class PdfSplitter {
 		int count = 1;
 		boolean firstPage = false;
 		boolean lastPage = false;
-		
+
 		for (PDDocument mydoc : splitPages) {
 			PDFTextStripper pdfTextStripper = new PDFTextStripper(); // to read the pdf
 			String docText = pdfTextStripper.getText(mydoc);
@@ -73,6 +73,6 @@ public class PdfSplitter {
 		}
 		//to save the last page
 		newDoc.save(newFile + "" + count + ".pdf");
-		System.out.println("The given file has been split into 2");
+		System.out.println("The given file has been split into "+count);
 	}
 }
