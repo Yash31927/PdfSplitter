@@ -23,7 +23,6 @@ public class PdfSplitter {
 		//to extract the file from source location
 		System.out.println("Enter file path");
 		File file = new File(s.next());
-//		File file = new File("C:\\Users\\Yash\\Downloads\\P_I_7_I_IP11_Hollander.pdf");
 
 		//to convert into pdf file
 		PDDocument pdfDocument = Loader.loadPDF(file); 
@@ -31,7 +30,6 @@ public class PdfSplitter {
 		//to create a new file
 		System.out.println("Enter the path where you want to save the file");
 		File newFile = new File(s.next());
-//		File newFile = new File("C:\\Users\\Yash\\Downloads\\split.pdf\\split");
 
 		//to split the pdf
 		Splitter splitter = new Splitter(); 
