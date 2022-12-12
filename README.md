@@ -4,8 +4,5 @@ To clear existing jar & Class file of the project, also check for compilation er
 To create updated bundle/jar & also download the dependencies in the project.
 ```mvn clean compile assembly:single```
 
-In order to run the jar please use below command to split a given pdf-
-``` java -jar .\target\yash-pdf-splitter-1.0-jar-with-dependencies.jar```
-
-In order to execute in any other system 
+In order to execute in any system 
 ```java -jar yash-pdf-splitter-1.0-jar-with-dependencies.jar ```
